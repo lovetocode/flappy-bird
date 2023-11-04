@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2nraiydc3h80"]
+[gd_scene load_steps=5 format=3 uid="uid://c2nraiydc3h80"]
 
-[ext_resource type="Texture2D" uid="uid://bwf5i0qyei8n0" path="res://Assets/background-day.png" id="1_evpse"]
+[ext_resource type="Texture2D" uid="uid://c3nmkam0tqpvk" path="res://Assets/San_fran_vic.jpg" id="1_63ch8"]
 [ext_resource type="PackedScene" uid="uid://bm7q5qrujquk" path="res://scenes/bird.tscn" id="1_tkl15"]
 [ext_resource type="PackedScene" uid="uid://33kra2pnmj6x" path="res://scenes/ground.tscn" id="3_vuswa"]
+[ext_resource type="PackedScene" uid="uid://cv2my41l3cnmd" path="res://scenes/PipeSpawner.tscn" id="4_pnma6"]
 
 [node name="Main" type="Node"]
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_evpse")
+position = Vector2(6, -110)
+texture = ExtResource("1_63ch8")
 
 [node name="Bird" parent="." instance=ExtResource("1_tkl15")]
 position = Vector2(0, -1)
@@ -16,3 +18,7 @@ position = Vector2(0, -1)
 
 [node name="Ground" parent="." instance=ExtResource("3_vuswa")]
 position = Vector2(24, 201)
+
+[node name="PipeSpawner" parent="." instance=ExtResource("4_pnma6")]
+
+[node name="GameManager" type="Node" parent="."]
