@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cv2my41l3cnmd"]
+
+[node name="PipeSpawner" type="Node"]
+
+[node name="SpawnTimer" type="Timer" parent="."]
