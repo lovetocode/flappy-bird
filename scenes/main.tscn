@@ -1,24 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2nraiydc3h80"]
+[gd_scene load_steps=7 format=3 uid="uid://c2nraiydc3h80"]
 
+[ext_resource type="Script" path="res://scenes/GameManager.gd" id="1_8y6o5"]
 [ext_resource type="Texture2D" uid="uid://c3nmkam0tqpvk" path="res://Assets/San_fran_vic.jpg" id="1_63ch8"]
 [ext_resource type="PackedScene" uid="uid://bm7q5qrujquk" path="res://scenes/bird.tscn" id="1_tkl15"]
 [ext_resource type="PackedScene" uid="uid://33kra2pnmj6x" path="res://scenes/ground.tscn" id="3_vuswa"]
 [ext_resource type="PackedScene" uid="uid://cv2my41l3cnmd" path="res://scenes/PipeSpawner.tscn" id="4_pnma6"]
+[ext_resource type="PackedScene" uid="uid://beukdvmwtjap1" path="res://scenes/fade.tscn" id="6_peomm"]
 
 [node name="Main" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_8y6o5")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(6, -110)
 texture = ExtResource("1_63ch8")
 
-[node name="Bird" parent="." instance=ExtResource("1_tkl15")]
-position = Vector2(0, -1)
-
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Ground" parent="." instance=ExtResource("3_vuswa")]
-position = Vector2(24, 201)
 
 [node name="PipeSpawner" parent="." instance=ExtResource("4_pnma6")]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="Ground" parent="." instance=ExtResource("3_vuswa")]
+position = Vector2(21, 202)
+
+[node name="Bird" parent="." instance=ExtResource("1_tkl15")]
+position = Vector2(0, -1)
+
+[node name="fade" parent="." instance=ExtResource("6_peomm")]
