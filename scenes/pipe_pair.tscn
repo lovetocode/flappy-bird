@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy4qoxcrj2fpn"]
 
-[ext_resource type="Texture2D" uid="uid://drx10uoxjpba5" path="res://Assets/pipe-green.png" id="1_1ba4s"]
 [ext_resource type="Script" path="res://scenes/pipe_pair.gd" id="1_jlnot"]
+[ext_resource type="Texture2D" uid="uid://d1r1kh3hifecy" path="res://Assets/vintageTrafficLight.png" id="2_3g428"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krhss"]
-size = Vector2(51, 271)
+size = Vector2(51, 286)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lmgx"]
-size = Vector2(52, 250)
+size = Vector2(52, 286)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fshr"]
 size = Vector2(7, 136)
@@ -20,20 +20,22 @@ position = Vector2(0, -300)
 rotation = 3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="TopPipe"]
-texture = ExtResource("1_1ba4s")
+position = Vector2(0.000250983, -99)
+texture = ExtResource("2_3g428")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
-position = Vector2(-0.500021, -104.5)
+position = Vector2(-0.500021, -97)
 shape = SubResource("RectangleShape2D_krhss")
 
 [node name="BottomPipe" type="Area2D" parent="."]
 position = Vector2(0, 300)
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
-texture = ExtResource("1_1ba4s")
+position = Vector2(0, -99)
+texture = ExtResource("2_3g428")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
-position = Vector2(0, -115)
+position = Vector2(0, -97)
 shape = SubResource("RectangleShape2D_8lmgx")
 
 [node name="Scored" type="Area2D" parent="."]
