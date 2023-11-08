@@ -9,6 +9,9 @@ signal game_started
 @export var rotation_speed = 2
 
 @onready var animation_player = $AnimationPlayer
+@onready var wing = $"../SFX/Wing"
+
+
 
 var max_speed = 200
 var is_started = false
@@ -39,6 +42,7 @@ func _physics_process(delta):
 func jump():
 	velocity.y = jump_force
 	rotation = deg_to_rad(-30)
+	wing.play()
 	
 func rotate_bird():
 	# rotate downward when falling
@@ -50,6 +54,7 @@ func rotate_bird():
 
 func kill():
 	should_process_input = false
+	
 	
 func stop():
 	animation_player.stop()

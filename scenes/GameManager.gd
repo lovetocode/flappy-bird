@@ -5,6 +5,8 @@ extends Node
 @onready var pipe_spawner = $"../PipeSpawner" as PipeSpawner
 @onready var fade = $"../fade" as Fade
 @onready var ui = $"../UI" as UI
+@onready var point = $"../SFX/Point"
+
 
 
 var points = 0
@@ -30,6 +32,8 @@ func end_game():
 func on_point_scored():
 	points += 1
 	ui.update_points(points)
+	point.play()
+	
 	
 	
 
