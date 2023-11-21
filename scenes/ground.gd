@@ -8,6 +8,7 @@ signal bird_crashed
 
 @onready var sprite1 = $Ground1/Sprite2D
 @onready var sprite2 = $Ground2/Sprite2D
+@onready var die = $"../SFX/Die"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +30,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	die.play()
 	bird_crashed.emit()
 	stop()
 	(body as Bird).stop()

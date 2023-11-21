@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2nraiydc3h80"]
+[gd_scene load_steps=13 format=3 uid="uid://c2nraiydc3h80"]
 
 [ext_resource type="Script" path="res://scenes/GameManager.gd" id="1_8y6o5"]
 [ext_resource type="Texture2D" uid="uid://c3nmkam0tqpvk" path="res://Assets/San_fran_vic.jpg" id="1_63ch8"]
@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://dv7a8lq6occf7" path="res://audio/point.wav" id="8_usteh"]
 [ext_resource type="AudioStream" uid="uid://crysoguewfnys" path="res://audio/wing.wav" id="9_hhyqx"]
 [ext_resource type="AudioStream" uid="uid://c0muugjgh8v86" path="res://audio/die.wav" id="9_uvoc2"]
+[ext_resource type="AudioStream" uid="uid://bjx0mekt44arw" path="res://audio/hit.wav" id="11_cxdks"]
+[ext_resource type="AudioStream" uid="uid://ccn0kju335h86" path="res://audio/swoosh.wav" id="12_lrcj8"]
 
 [node name="Main" type="Node"]
 
@@ -44,3 +46,9 @@ stream = ExtResource("9_hhyqx")
 
 [node name="Die" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("9_uvoc2")
+
+[node name="hit" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_cxdks")
+
+[node name="woosh" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_lrcj8")

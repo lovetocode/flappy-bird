@@ -6,10 +6,12 @@ extends Node
 @onready var fade = $"../fade" as Fade
 @onready var ui = $"../UI" as UI
 @onready var point = $"../SFX/Point"
+@onready var woosh = $"../SFX/woosh"
 
 
 
 var points = 0
+var Start_woosh = 0 
 
 func _ready():
 	bird.game_started.connect(on_game_started)
@@ -19,10 +21,13 @@ func _ready():
 	
 func on_game_started():
 	pipe_spawner.start_spawning_pipes()
+	if Start_woosh == 0:
+		woosh.play()
 	
 func end_game():
 	if fade != null:
 		fade.play()
+	
 	ground.stop()
 	bird.kill()
 	pipe_spawner.stop()

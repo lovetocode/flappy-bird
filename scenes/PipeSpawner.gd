@@ -8,6 +8,8 @@ signal point_scored
 var pipe_pair_scene = preload("res://scenes/pipe_pair.tscn")
 
 @onready var spawn_timer = $SpawnTimer
+@onready var hit = $"../SFX/hit"
+@onready var bird_hit = 0
 
 var pipe_speed = -150
 
@@ -37,6 +39,9 @@ func spawn_pipe():
 	pipe.set_speed(pipe_speed)
 	
 func on_bird_entered():
+	if bird_hit == 0:
+		hit.play()
+		bird_hit += 1
 	bird_crashed.emit()
 	stop()
 	
