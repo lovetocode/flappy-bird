@@ -19,6 +19,10 @@ func _ready():
 	pipe_spawner.bird_crashed.connect(end_game)
 	pipe_spawner.point_scored.connect(on_point_scored)
 	
+func  _process(delta):
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
+	
 func on_game_started():
 	pipe_spawner.start_spawning_pipes()
 	if Start_woosh == 0:
