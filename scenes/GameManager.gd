@@ -7,10 +7,12 @@ extends Node
 @onready var ui = $"../UI" as UI
 @onready var point = $"../SFX/Point"
 @onready var woosh = $"../SFX/woosh"
-
+@onready var start = $"../Start"
+@onready var background_music = $"../SFX/BackgroundMusic"
 
 
 var points = 0
+var high_score = 0
 var Start_woosh = 0 
 
 func _ready():
@@ -18,6 +20,7 @@ func _ready():
 	ground.bird_crashed.connect(end_game)
 	pipe_spawner.bird_crashed.connect(end_game)
 	pipe_spawner.point_scored.connect(on_point_scored)
+	background_music.play()
 	
 func  _process(delta):
 	if Input.is_action_just_pressed("quit"):
@@ -35,15 +38,15 @@ func end_game():
 	ground.stop()
 	bird.kill()
 	pipe_spawner.stop()
-	ui.on_game_over()
+	ui.on_game_over(points, high_score)
 	
 	
 func on_point_scored():
 	points += 1
 	ui.update_points(points)
+	if points > high_score:
+		high_score = points
 	point.play()
-	
-	
 	
 
 

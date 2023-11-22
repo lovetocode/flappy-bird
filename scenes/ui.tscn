@@ -38,7 +38,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/GameOverBox"]
+[node name="GameOver" type="TextureRect" parent="MarginContainer/GameOverBox"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_8js5m")
@@ -48,17 +48,33 @@ custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3ghc")
 
+[node name="Score" type="Label" parent="MarginContainer/GameOverBox/Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 114.0
+offset_bottom = 30.0
+text = "Score: 999999"
+
+[node name="HighScore" type="Label" parent="MarginContainer/GameOverBox/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 30.0
+offset_right = 45.0
+offset_bottom = 53.0
+text = "High-score: 9999"
+
 [node name="Button" type="Button" parent="MarginContainer/GameOverBox/Panel"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -15.5
-offset_right = 32.5
-offset_bottom = 15.5
+anchor_bottom = 0.66
+offset_left = -39.0
+offset_top = 12.0
+offset_right = 35.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tp44")
