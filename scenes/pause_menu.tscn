@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6nmynosiq3mc"]
+
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_5hes1"]
+[ext_resource type="FontFile" uid="uid://cu4lf4od2owng" path="res://Assets/font/FlappyBird.ttf" id="1_cswps"]
+
+[node name="PauseMenu" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_5hes1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.196078, 0.156863, 0.478431)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 1.0
+offset_right = 237.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_cswps")
+theme_override_font_sizes/font_size = 40
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1

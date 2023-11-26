@@ -8,8 +8,6 @@ class_name UI
 @onready var HighScore = $MarginContainer/GameOverBox/Panel/HighScore
 
 
-
-
 func _ready():
 	points_label.text = "%d" % 0
 	
@@ -18,8 +16,16 @@ func update_points(points :int):
 	
 func on_game_over(points: int, high_score: int):
 	game_over_box.visible = true
-	score.text = "Score: " + str(points)
-	HighScore.text = "High-score: " + str(high_score)
-
+	set_score(points)
+	set_high_score(high_score)
+	
 func _on_button_pressed():
 	get_tree().reload_current_scene()
+	
+func set_high_score(high_score):
+	HighScore.text = "High-score: " + str(high_score)
+
+func set_score(points):
+	score.text = "Score: " + str(points)
+	
+	
