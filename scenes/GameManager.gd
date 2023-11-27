@@ -9,7 +9,7 @@ extends Node
 @onready var woosh = $"../SFX/woosh"
 @onready var start = $"../Start"
 @onready var background_music = $"../SFX/BackgroundMusic"
-@onready var pause_menu = $"../PauseMenu"
+
 
 var path_to_file = "user://sava.data"
 
@@ -28,10 +28,6 @@ func _ready():
 func  _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
-	elif Input.is_action_just_pressed("pause"):
-		pause_menu.pause()
-	elif Input.is_action_just_pressed("unpause"):
-		pause_menu.unpause()
 	
 func on_game_started():
 	pipe_spawner.start_spawning_pipes()
