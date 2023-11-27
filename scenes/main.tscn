@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2nraiydc3h80"]
+[gd_scene load_steps=14 format=3 uid="uid://c2nraiydc3h80"]
 
 [ext_resource type="Script" path="res://scenes/GameManager.gd" id="1_8y6o5"]
 [ext_resource type="Texture2D" uid="uid://c3nmkam0tqpvk" path="res://Assets/San_fran_vic.jpg" id="1_63ch8"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cv2my41l3cnmd" path="res://scenes/PipeSpawner.tscn" id="4_pnma6"]
 [ext_resource type="PackedScene" uid="uid://beukdvmwtjap1" path="res://scenes/fade.tscn" id="6_peomm"]
 [ext_resource type="PackedScene" uid="uid://di5kj6ndw1cuc" path="res://scenes/ui.tscn" id="7_c025a"]
-[ext_resource type="PackedScene" uid="uid://c6nmynosiq3mc" path="res://scenes/pause_menu.tscn" id="8_oouge"]
 [ext_resource type="AudioStream" uid="uid://dv7a8lq6occf7" path="res://audio/point.wav" id="8_usteh"]
 [ext_resource type="AudioStream" uid="uid://crysoguewfnys" path="res://audio/wing.wav" id="9_hhyqx"]
 [ext_resource type="AudioStream" uid="uid://c0muugjgh8v86" path="res://audio/die.wav" id="9_uvoc2"]
@@ -38,26 +37,26 @@ position = Vector2(0, -1)
 
 [node name="UI" parent="." instance=ExtResource("7_c025a")]
 
-[node name="PauseMenu" parent="." instance=ExtResource("8_oouge")]
-position = Vector2(-143, -100)
-
 [node name="SFX" type="Node" parent="."]
 
 [node name="Point" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("8_usteh")
+volume_db = -10.0
 
 [node name="Wing" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("9_hhyqx")
+volume_db = -10.0
 
 [node name="Die" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("9_uvoc2")
 
 [node name="hit" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("11_cxdks")
+volume_db = -10.0
 
 [node name="woosh" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("12_lrcj8")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("13_xm2wj")
-volume_db = -10.0
+volume_db = -20.0
